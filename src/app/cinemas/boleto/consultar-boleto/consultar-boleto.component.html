@@ -1,0 +1,49 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">{{ titulo }}</div>
+    <div class="card-body text-primary">
+        <div class="row">
+            <label for="cedulaCliente" class="col-form-label col-sm-2">Cédula de Ciudadanía</label>
+            
+            <div class="col-4">
+                <input type="text" class="form-control" [(ngModel)]="boleto.cedulaCliente" name="cedulaCliente">
+            </div>
+            <div class="col-2">
+                <button class="btn btn-success" type="button" (click)='getBoleto()'>Buscar</button>
+            </div>
+    
+        </div>
+        <br>
+        <br>
+        <br>
+        <div class="row">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Cedula Cliente</th>
+                        <th>Cinema</th>
+                        <th>Dirección</th>
+                        <th>Pelicula</th>
+                        <th>Sala</th>
+                        <th>Silla</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let bol of boletos">
+                        <td>{{bol.id}}</td>
+                        <td>{{bol.cedulaCliente}}</td>
+                        <td>{{bol.cinema.nombre}}</td>
+                        <td>{{bol.cinema.direccion}}</td>
+                        <td>{{bol.pelicula.nombre}}</td>
+                        <td>{{bol.sala.id}}</td>
+                        <td>{{bol.sillas}}</td>
+                        <td><button type="button" name="editar" [routerLink]="['/cinemas/form',bol.id]"
+                                class="btn btn-primary btn-sm">editar</button></td>
+                        <td><button type="button" name="eliminar" (click)='delete(bol)'
+                                class="btn btn-danger btn-sm">eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

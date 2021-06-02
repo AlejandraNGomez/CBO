@@ -1,0 +1,37 @@
+<h1 style="text-align: center; font: 50px; margin-top: 5%;">
+    {{titulo}}
+</h1>
+<br/>
+<br/>
+<div class="container" style="width: 1750px; height: 500px;">
+    <div class="row">
+        <div class="col-5" style="text-align: center">
+            <img class="card-img-top" src={{peliculas.caratula}} style="width: 80%; height: 70%;border-radius: 20px;"><br/><br/>
+            <h5>{{peliculas.cinema.nombre}}<br/></h5>
+            <h5>Sala: #{{peliculas.sala.id}}<br/></h5>
+            <div>
+                <img style="width: 40px; height: 20px;" src="https://www.trecebits.com/wp-content/uploads/2020/02/Nuevo-logo-Google-Maps-800x445.jpg">{{peliculas.cinema.direccion}}<br/>
+            </div>
+        </div>
+        <div class="col">
+            <h2 class="card-title" style="text-align: center">{{peliculas.nombre}}</h2>
+            {{peliculas.descripcion}}<br/><br/><br/><br/>
+            
+            <div id="map" class="map" style="height:300px"></div>
+
+        </div>
+    </div> 
+    <br/><br/><br/>
+    <div class="row">
+        <div class="col-7"></div>
+        <div class="col-2">
+            <button type="button" class="btn btn-dark" [routerLink]="['/home']">Volver</button>
+        </div>
+        <div class="col-2">
+            <button type="button" class="btn btn-dark"routerLink="/cinemas/Boleto">Adquirir Boleto</button>
+        </div>
+    </div>
+    <br/><br/><br/>
+
+    
+</div>

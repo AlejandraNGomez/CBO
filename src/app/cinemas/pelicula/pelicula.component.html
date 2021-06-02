@@ -1,0 +1,22 @@
+<h1 style="text-align: center;font:50px; margin-top: 5%;">
+    {{titulo}}
+  </h1>
+  
+<div id="ciudad" hidden></div>
+<br/>
+<div style=" height: 750px; text-align: center;  " >
+        <div class="row" >
+            <div class="card" style="width: 15rem; margin: 45px;" *ngFor="let pelicula of peliculas">
+                <img class="card-img-top" src={{pelicula.caratula}} alt="">
+                <div class="card-body">
+                    <h3 class="card-title">{{pelicula.nombre}}</h3>
+                    {{pelicula.cinema.nombre}}<br/>
+                    {{pelicula.categoria}}<br/>
+                    Sala: #{{pelicula.sala.id}}<br/><br/>
+                    <a href="#" class="btn btn-rounded btn-primary" type="button" [routerLink]="['/cinemas/detalle-pelicula/detalle-pelicula',pelicula.id]" >Ver Detalle</a>
+                    
+                </div>
+            </div>
+        </div>
+</div>
+

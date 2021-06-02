@@ -1,0 +1,43 @@
+<div class="card border-primary mb-3">
+    <div class="card-header">Cinemas</div>
+    <div class="card-body text-primary">
+        <h5 class="card-title">Listado de cinemas</h5>
+        <div class="my-2 text-left">
+            <button class="btn btn-rounded btn-primary" type="button" [routerLink]="['/cinemas/form']">Crear Boleto</button>
+        </div>
+        <div class="row">
+            <table class="table table-bordered table-striped">
+                <thead>
+                    <tr>
+                        <th>id</th>
+                        <th>Nombre</th>
+                        <th>Representante Legal</th>
+                        <th>Representante Legal Identificacion</th>
+                        <th>Fecha Constitucion</th>
+                        <th>Ciudad</th>
+                        <th>Telefono</th>
+                        <th>Email</th>
+                        <th>Editar</th>
+                        <th>Eliminar</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let cinema of cinemas">
+                        <td>{{cinema.id}}</td>
+                        <td>{{cinema.nombre}}</td>
+                        <td>{{cinema.representanteLegalNombre}}</td>
+                        <td>{{cinema.representanteLegalIdentificacion}}</td>
+                        <td>{{cinema.fechaConstitucion}}</td>
+                        <td>{{cinema.ciudad}}</td>
+                        <td>{{cinema.telefono}}</td>
+                        <td>{{cinema.email}}</td>
+                        <td><button type="button" name="editar" [routerLink]="['/cinemas/form',cinema.id]"
+                                class="btn btn-primary btn-sm">editar</button></td>
+                        <td><button type="button" name="eliminar" (click)='delete(cinema)'
+                                class="btn btn-danger btn-sm">eliminar</button></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
